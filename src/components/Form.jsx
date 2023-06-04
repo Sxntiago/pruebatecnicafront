@@ -25,6 +25,7 @@ export const Form = ({ country }) => {
       return;
     }
 
+    //POST
     const userData = {
       name,
       country: selectedCountry,
@@ -32,7 +33,7 @@ export const Form = ({ country }) => {
 
     console.log(userData);
 
-    let url = "http://127.0.0.1:3000/api/users";
+    let url = "http://54.91.131.74:3000/api/users";
     let params = {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -49,24 +50,6 @@ export const Form = ({ country }) => {
         throw new Error("Error: " + res.status);
       }
     });
-
-    //POST
-    //  await fetch("http://127.0.0.1:3000/api/users", {
-    //     method: "POST",
-    //     headers: {
-    //       accept: "application/json",
-    //     },
-    //     body: JSON.stringify(userData),
-    //   }).then(function (response) {
-    //     if (response.ok) {
-    //       console.log("Solicitud exitosa");
-    //       return response.json();
-    //     } else {
-    //       throw new Error(
-    //         "Error en la solicitud. Código de estado: " + response.status
-    //       );
-    //     }
-    //   });
 
     //  reset form
     setName("");
